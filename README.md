@@ -11,9 +11,10 @@ as per [airflow before you begin](https://airflow.apache.org/docs/apache-airflow
 and [wsl documentation](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig)
 and restart PC. To see if config was applied, run `wsl` -> `free -h` to see how much memory is allocated.
 6. Start all services `docker compose up`
-7. Login to http://localhost:8080/ (airflow/airflow) and pgadmin (admin@admin.com/root)
-8. Create server in pgadmin - `Add new server` -> General: enter name like `airflow_server` -> Connection: enter username & password (airflow/airflow) 
-& Host name/address (`docker container ls` -> `docker inspect <postgres_id>` -> get IPAddress under Networks)
+7. Login to http://localhost:8080/ (airflow/airflow) and pgadmin http://localhost:5050/ (admin@admin.com/root)
+8. Create server in pgadmin - Add new server -> General: enter name like `airflow_server` -> 
+Connection: enter username & password (airflow/airflow) 
+& Host name/address (`docker container ls` -> `docker inspect <postgres_id>` -> get IPAddress under Networks key)
 9. Create new db like `dag_results`
 10. Go to Airflow -> Connections -> create postgres connection with host/port/db_name/user/password from above
 11. Setup DAG
